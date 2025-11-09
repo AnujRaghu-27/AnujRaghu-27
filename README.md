@@ -1,6 +1,6 @@
 Hi my name is Anuj Raghuwanshi ✌🏻
 
- # 💫 About Me:
+<!-- # 💫 About Me:
 I am currently learning Javascript.
 
 ## 🌐 Socials:
@@ -32,3 +32,4 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 
+-->

@@ -65,6 +65,33 @@ async function getContributions() {
   return result.data.user.contributionsCollection.contributionCalendar;
 }
 
+/*
+ * GitHub dark-mode contribution colors.
+ *
+ * We use the contribution count instead of the
+ * color returned by GitHub because the API can
+ * return colors intended for the light theme.
+ */
+function getContributionColor(count) {
+  if (count === 0) {
+    return "#151B23";
+  }
+
+  if (count <= 2) {
+    return "#0e4429";
+  }
+
+  if (count <= 5) {
+    return "#006d32";
+  }
+
+  if (count <= 9) {
+    return "#26a641";
+  }
+
+  return "#39d353";
+}
+
 function parseDate(date) {
   return new Date(`${date}T00:00:00Z`);
 }
@@ -119,8 +146,8 @@ async function generateHeatmap() {
     Move forward to the first Sunday after the
     one-year-ago date.
 
-    This removes the awkward partial first week that
-    was producing the isolated square at the beginning.
+    This removes the awkward partial first week
+    at the beginning.
   */
 
   const calendarStart = new Date(oneYearAgo);
@@ -166,10 +193,15 @@ async function generateHeatmap() {
       if (contribution) {
         week.push(contribution);
       } else {
+        /*
+         * A day with zero contributions.
+         *
+         * The color will be calculated using
+         * getContributionColor() later.
+         */
         week.push({
           date: dateString,
           contributionCount: 0,
-          color: "#161b22",
           weekday: dayIndex
         });
       }
@@ -311,6 +343,18 @@ async function generateHeatmap() {
         topPadding +
         dayIndex * weekWidth;
 
+      /*
+       * IMPORTANT:
+       *
+       * We no longer use day.color here.
+       *
+       * Instead we calculate the dark-mode color
+       * from the actual contribution count.
+       */
+      const color = getContributionColor(
+        day.contributionCount
+      );
+
       cells += `
         <rect
           x="${x}"
@@ -318,7 +362,7 @@ async function generateHeatmap() {
           width="${cellSize}"
           height="${cellSize}"
           rx="2"
-          fill="${day.color}"
+          fill="${color}"
           class="cell week-${weekIndex}"
         >
           <title>

@@ -9,7 +9,7 @@
 
     .cell {
       opacity: 0;
-      animation: reveal 0.18s ease-out forwards;
+      animation: reveal 0.12s ease-out forwards;
     }
 
     
@@ -5539,7 +5539,7 @@
           class="cell week-51"
         >
           <title>
-            2026-10-03 — 3 contributions
+            2026-10-03 — 4 contributions
           </title>
         </rect>
       
@@ -5551,7 +5551,7 @@
     font-size="11"
     font-family="Arial, Helvetica, sans-serif"
   >
-    154 contributions
+    155 contributions
   </text>
 
   

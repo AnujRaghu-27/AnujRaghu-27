@@ -456,7 +456,7 @@ async function generateHeatmap() {
 
     .cell {
       opacity: 0;
-      animation: reveal 0.18s ease-out forwards;
+      animation: reveal 0.12s ease-out forwards;
     }
 
     ${animationRules}

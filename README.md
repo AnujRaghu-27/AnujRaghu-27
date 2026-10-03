@@ -1,16 +1,18 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**AnujRaghu-27/AnujRaghu-27** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# Hi there 👋
 
-Here are some ideas to get you started:
+I'm Anuj Raghuwanshi, a Computer Science student interested in
+software development, AI/ML, and building things.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+</div>
+
+---
+
+## 📊 My Contributions
+
+<div align="center">
+
+<img src="./assets/contribution-heatmap.svg" width="100%" />
+
+</div>
